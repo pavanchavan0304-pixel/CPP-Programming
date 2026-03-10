@@ -1,0 +1,33 @@
+ 
+
+#include<iostream>
+using namespace std;
+
+void DisplayDigits(int iNo)
+{
+    
+   
+ if (iNo!=0)
+   {
+     DisplayDigits(iNo/10);
+
+        cout<<iNo<<"\n";
+
+   }
+  
+}
+
+int main()
+{
+    int iValue=0;
+
+    cout<<"Enter number:\n";
+    
+    cin>>iValue;
+
+   DisplayDigits(iValue);
+
+    //cout<<"number of digits are:"<<iRet<<"\n";
+
+    return 0;
+}

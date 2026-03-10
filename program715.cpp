@@ -1,0 +1,53 @@
+// input 7891 
+//output 25
+
+#include<iostream>
+using namespace std;
+
+ bool CheckPerfect(int iNo)
+ {
+   static int iCnt=1;
+   static int iSum=0;
+
+  if(iCnt<=(iNo/2))
+  {
+    if(iNo%iCnt==0)
+    {
+      iSum=iSum+iCnt;
+    }
+  }
+  iCnt++;
+CheckPerfect(iNo);
+ 
+ if( iSum== iNo)
+ {
+  return true;
+ }
+ else
+ {
+  return false;
+ }
+}
+
+int main()
+{
+    int iValue=0;
+    bool bRet=false;
+
+    cout<<"Enter number:\n";
+    
+    cin>>iValue;
+
+   bRet=CheckPerfect(iValue);
+
+    if(bRet==true)
+    {
+      cout<<"it is a perfect number"<<"/n";
+    }
+    else
+    {
+      cout<<"it is  not  a perfect number"<<"/n";
+    }
+
+    return 0;
+}
